@@ -33,7 +33,7 @@ function sendMessages(text, plan) {
     } else if (plan = "10,00円プラン"){
         var linkmessage = "リンクからお支払いを設定してください。\n https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-2H011187SV385063BMCJ6QBY"
     } else if (plan == "その他"){
-        var linkmessage = "*その他を選択された" + name + "様には、運営より別途支払いリンク先を送付いたします。"
+        var linkmessage = "運営より別途支払いリンク先を送付いたします。"
     }
     
     liff.sendMessages([{

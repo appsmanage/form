@@ -18,12 +18,24 @@ function initializeLiff(liffId) {
         });
 }
 
-function sendText(text) {
-        sendMessages(text);
+function sendText(text, plan) {
+        sendMessages(text, plan);
 }
 
 // LINEトーク画面上でメッセージ送信
-function sendMessages(text) {
+function sendMessages(text, plan) {
+    if (plan === "undefined"){
+        returne;
+    } else if (plan = "100円プラン"){
+        var linkmessage = "リンクからお支払いを設定してください。\n https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-41E3830771397714GMCJ5GTI"
+    } else if (plan = "1,000円プラン"){
+        var linkmessage = "リンクからお支払いを設定してください。\n https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-45W435992M807325LMCHYRRI"
+    } else if (plan = "10,00円プラン"){
+        var linkmessage = "リンクからお支払いを設定してください。\n https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-2H011187SV385063BMCJ6QBY"
+    } else if (plan == "その他"){
+        var linkmessage = "*その他を選択された" + name + "様には、運営より別途支払いリンク先を送付いたします。"
+    }
+    
     liff.sendMessages([{
         'type': 'text',
         'text': "以下の内容でお申込みを受付けました。"
@@ -32,7 +44,7 @@ function sendMessages(text) {
         'text': text
     },{
         'type': 'text',
-        'text': "リンクからお支払いを設定してください。\n https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-41E3830771397714GMCJ5GTI"
+        'text': linkmessage
     },]).then(function () {
         liff.closeWindow();
     }).catch(function (error) {

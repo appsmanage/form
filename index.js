@@ -4,12 +4,12 @@ var key = params.get('key');
 $(function () {
     // 送信
     $('form').submit(function () {
-        var date = $('input[name="date"]').val();
-        var start_time = $('input[name="start_time"]').val();
+        var username = $('input[name="username"]').val();
+        var mailadress = $('input[name="mailadress"]').val();
         //var mes_date = $('textarea[name="end_time"]').val();
-        var end_time = $('input[name="end_time"]').val();
+        var plan = $('input[name="plan"]').val();
 
-        var msg = `${key}\n日付：${date}\n始業時間：${start_time}\n終業時間：${end_time}`;
+        var msg = `${key}\nお名前：${username}\nMail：${mailadress}\nお申込みプラン：${plan}`;
         sendText(msg);
 
         return false;

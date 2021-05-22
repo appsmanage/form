@@ -9,7 +9,7 @@ $(function () {
         //var mes_date = $('textarea[name="end_time"]').val();
         var plan = $('input[name="plan"]').val();
 
-        var msg = `${key}\nお名前：${username}\nMail：${email}\nお申込みプラン：${plan}`;
+        var msg = `${key}\nお名前：${username}\nEmail：${email}\nお申込みプラン：${plan}`;
         sendText(msg);
 
         return false;

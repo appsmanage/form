@@ -30,10 +30,7 @@ function sendMessages(text) {
     },{
         'type': 'text',
         'text': text
-    },{
-       'type': 'text,
-       'text': "リンクからお支払い設定をしてください。\n https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-41E3830771397714GMCJ5GTI"
-   }]).then(function () {
+    },]).then(function () {
         liff.closeWindow();
     }).catch(function (error) {
         window.alert('Failed to send message ' + error);

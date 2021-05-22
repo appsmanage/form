@@ -26,14 +26,13 @@ function sendText(text) {
 function sendMessages(text) {
     liff.sendMessages([{
         'type': 'text',
-        'text': "以下の内容で出勤状況修正依頼を受付けました。"
+        'text': "以下の内容でお申込みを受付けました。"
     },{
         'type': 'text',
         'text': text
     },{
-       "type": "sticker",
-       "packageId": "11537",
-       "stickerId": "52002739"
+       'type': 'text,
+       'text': "リンクからお支払い設定をしてください。"
    }]).then(function () {
         liff.closeWindow();
     }).catch(function (error) {

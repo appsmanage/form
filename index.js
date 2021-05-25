@@ -10,7 +10,6 @@ $(function () {
         var plan = $('input[name="plan"]').val();
         var msg = `${key}\nお名前：${username}\nEmail：${email}\nお申込みプラン：${plan}`;
         sendText(msg, plan);
-        setUserlist(username, email, plan);
 
         return false;
     });

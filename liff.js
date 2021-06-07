@@ -42,10 +42,14 @@ function sendMessages(text, plan) {
     },{
         'type': 'text',
         'text': text
-    },{
-        'type': 'text',
-        'text': linkmessage
-    },]).then(function () {
+    },
+                       
+                      // {
+        //'type': 'text',
+        //'text': linkmessage
+    //},
+                      
+                      ]).then(function () {
         liff.closeWindow();
     }).catch(function (error) {
         window.alert('Failed to send message ' + error);
